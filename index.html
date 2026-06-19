@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roshan Mali | EDP Officer & Data Analyst Portfolio</title>
+    <!-- Meta Descriptions & SEO -->
+    <meta name="description" content="Roshan Mali - Professional EDP Officer & Data Analyst specializing in MIS reporting, advanced Excel & Google Sheets, SQL, and educational data management. View interactive dashboard portfolio.">
+    <meta name="keywords" content="Roshan Mali, Data Analyst, EDP Officer, MIS Executive, Excel Expert, Bhilwara, Portfolio, Dainik Bhaskar, AESL, Aakash Educational Services">
+    <meta name="author" content="Roshan Mali">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Chart.js for Interactive Dashboard -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    
+    <!-- Maven Fuzzy Factory Data Feed -->
+    <script src="maven_data.js" defer></script>
+    
+    <!-- Custom Script -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Background Decoration -->
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-glow bg-glow-3"></div>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-accent">&lt;</span>Roshan.Mali<span class="logo-accent">/&gt;</span>
+            </a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#dashboard" class="nav-link">Dashboard</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="Roshan_Lal_CV.pdf" download="Roshan_Lal_CV.pdf" class="nav-link show-on-mobile-only"><i class="fa-solid fa-download"></i> Download CV</a>
+            </nav>
+
+            <div class="nav-cta">
+                <a href="Roshan_Lal_CV.pdf" download="Roshan_Lal_CV.pdf" class="btn btn-sm btn-outline hide-on-mobile">
+                    <i class="fa-solid fa-download"></i> Download CV
+                </a>
+                <a href="mailto:sainiroshan294@gmail.com" class="btn btn-sm btn-primary">Hire Me</a>
+                <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-tag">Welcome to my Portfolio</div>
+                    <h1 class="hero-title">
+                        Hi, I am <span class="text-gradient">Roshan Mali</span>
+                    </h1>
+                    <h2 class="hero-subtitle">
+                        I am a <span class="typing-text" id="typingText">EDP Officer</span>
+                    </h2>
+                    <p class="hero-description">
+                        Dedicated EDP Officer and Data Analyst with 3+ years of expertise in Excel-based MIS reporting, data management, and operational analysis. I transform complex student and business records into intuitive reports for strategic decision-making.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#dashboard" class="btn btn-primary">
+                            <i class="fa-solid fa-chart-line"></i> View Dashboard
+                        </a>
+                        <a href="Roshan_Lal_CV.pdf" download="Roshan_Lal_CV.pdf" class="btn btn-secondary">
+                            <i class="fa-solid fa-download"></i> Download CV
+                        </a>
+                        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+                    </div>
+                    <div class="hero-socials">
+                        <a href="mailto:sainiroshan294@gmail.com" title="Email"><i class="fa-regular fa-envelope"></i></a>
+                        <a href="tel:+918875216646" title="Phone"><i class="fa-solid fa-phone"></i></a>
+                        <a href="https://wa.me/918875216646" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="hero-image-container">
+                    <div class="image-wrapper">
+                        <img src="analyst_hero.png" alt="Roshan Mali - Data Analyst Illustration" class="hero-image">
+                    </div>
+                    <div class="decorative-card float-card-1">
+                        <div class="float-card-icon"><i class="fa-solid fa-file-excel text-green"></i></div>
+                        <div>
+                            <h4>Excel Specialist</h4>
+                            <p>Advanced Formulas</p>
+                        </div>
+                    </div>
+                    <div class="decorative-card float-card-2">
+                        <div class="float-card-icon"><i class="fa-solid fa-database text-blue"></i></div>
+                        <div>
+                            <h4>MIS Dashboard</h4>
+                            <p>Automated Reports</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="about-section scroll-reveal">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-card intro-card">
+                    <div class="card-icon-header"><i class="fa-regular fa-user"></i></div>
+                    <h3>Who I Am</h3>
+                    <p>
+                        Currently working as an <strong>EDP Officer & Data Analyst</strong> at Aakash Educational Services Limited (AESL) in Bhilwara. I specialize in managing databases, evaluating academic performance, and creating structured reports for branch-level planning.
+                    </p>
+                    <p>
+                        With a solid foundation in Mathematics (B.Sc.) and deep practical experience in database tools, I enjoy building automated spreadsheet solutions that replace manual work and minimize reporting errors.
+                    </p>
+                </div>
+                
+                <div class="about-card education-card">
+                    <div class="card-icon-header"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3>Education</h3>
+                    <ul class="education-list">
+                        <li>
+                            <div class="edu-year">2018</div>
+                            <div class="edu-details">
+                                <h4>RS-CIT</h4>
+                                <p>VMOU, Kota</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="edu-year">Graduation</div>
+                            <div class="edu-details">
+                                <h4>B.Sc. (MATHS)</h4>
+                                <p>MDS University, Ajmer</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="about-card details-card">
+                    <div class="card-icon-header"><i class="fa-solid fa-address-card"></i></div>
+                    <h3>Personal Details</h3>
+                    <table class="details-table">
+                        <tr>
+                            <td><span class="table-label">Languages</span></td>
+                            <td>English, Hindi</td>
+                        </tr>
+                        <tr>
+                            <td><span class="table-label">Nationality</span></td>
+                            <td>Indian</td>
+                        </tr>
+                        <tr>
+                            <td><span class="table-label">Location</span></td>
+                            <td>Bhilwara, Rajasthan</td>
+                        </tr>
+                        <tr>
+                            <td><span class="table-label">Profile</span></td>
+                            <td>Data Analytics, MIS, EDP</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section scroll-reveal">
+            <div class="section-header">
+                <h2 class="section-title">My Skills</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="skills-grid">
+                <!-- Expert Skills -->
+                <div class="skills-card">
+                    <div class="skills-header-block">
+                        <i class="fa-solid fa-award skills-badge-icon"></i>
+                        <h3>Expert Skills</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fa-regular fa-file-excel text-green"></i> Advanced Excel</span>
+                                <span class="skill-percent">95%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill progress-excel" style="width: 95%"></div>
+                            </div>
+                            <p class="skill-subtext">Pivot Tables, VLOOKUP/XLOOKUP, Nested IFs, Dynamic Charts, Macro integration</p>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fa-brands fa-google text-blue"></i> Google Sheets</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill progress-gsheets" style="width: 90%"></div>
+                            </div>
+                            <p class="skill-subtext">Array Formulas, QUERY/FILTER functions, dashboard automation</p>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fa-solid fa-server text-indigo"></i> MS Access</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill progress-access" style="width: 80%"></div>
+                            </div>
+                            <p class="skill-subtext">Database structuring, queries design, table relationships</p>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fa-regular fa-file-word text-cyan"></i> MS Word</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill progress-word" style="width: 85%"></div>
+                            </div>
+                            <p class="skill-subtext">Professional documentation, templates, mail merge</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secondary & Creative Skills -->
+                <div class="skills-card">
+                    <div class="skills-header-block">
+                        <i class="fa-solid fa-screwdriver-wrench skills-badge-icon"></i>
+                        <h3>Other Capabilities</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fa-solid fa-database text-yellow"></i> SQL Basic</span>
+                                <span class="skill-percent">70%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill progress-sql" style="width: 70%"></div>
+                            </div>
+                            <p class="skill-subtext">Data retrieval, basic queries, SELECT statements, WHERE clauses</p>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fa-solid fa-code text-orange"></i> HTML & CSS</span>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill progress-web" style="width: 75%"></div>
+                            </div>
+                            <p class="skill-subtext">Static webpage layouts, styling web components, formatting</p>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fa-solid fa-calculator text-violet"></i> Tally Accounts</span>
+                                <span class="skill-percent">65%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill progress-tally" style="width: 65%"></div>
+                            </div>
+                            <p class="skill-subtext">Basic accounting records, voucher entry, financial inputs</p>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name"><i class="fa-solid fa-palette text-pink"></i> Creative Tools</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill progress-creative" style="width: 80%"></div>
+                            </div>
+                            <p class="skill-subtext">Corel Draw (Design), Premiere Pro (Video editing)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Data Dashboard Showcase Section -->
+        <section id="dashboard" class="dashboard-section scroll-reveal">
+            <div class="section-header">
+                <h2 class="section-title">Interactive Analytics Showcase</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <p class="dashboard-intro">
+                Interact with this live E-Commerce Operations & Sales Dashboard. This dashboard was generated by analyzing the raw Maven Fuzzy Factory SQL dataset (470k+ sessions, 32k+ orders, refunds, and products) using Python, illustrating my end-to-end data aggregation and front-end visualization capabilities.
+            </p>
+
+            <div class="dashboard-tabs">
+                <button class="tab-btn active" id="tabBtnJS"><i class="fa-solid fa-chart-simple"></i> Interactive JS Dashboard</button>
+                <button class="tab-btn" id="tabBtnPython"><i class="fa-brands fa-python"></i> Python Matplotlib & Seaborn Report</button>
+            </div>
+
+            <div class="dashboard-container" id="panelJSDashboard">
+                <!-- Dashboard Sidebar Controls -->
+                <div class="dashboard-sidebar">
+                    <h3><i class="fa-solid fa-sliders"></i> Control Panel</h3>
+                    
+                    <div class="control-group">
+                        <label for="datasetSelect">Select Report Type</label>
+                        <select id="datasetSelect" class="form-control">
+                            <option value="revenue">Monthly Revenue & Profit Growth</option>
+                            <option value="conversion">Conversion Rate & Traffic Volume</option>
+                            <option value="products">Product Performance Breakdown</option>
+                            <option value="refunds">Refund Rate Analysis</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group" id="filter1Container">
+                        <label for="filter1Select" id="filter1Label">Device Category</label>
+                        <select id="filter1Select" class="form-control">
+                            <option value="all">All Devices</option>
+                            <option value="desktop">Desktop Only</option>
+                            <option value="mobile">Mobile Only</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group" id="filter2Container">
+                        <label for="filter2Select" id="filter2Label">Year Range</label>
+                        <select id="filter2Select" class="form-control">
+                            <option value="all">All Years (2012 - 2015)</option>
+                            <option value="2012">2012 Data</option>
+                            <option value="2013">2013 Data</option>
+                            <option value="2014">2014 Data</option>
+                            <option value="2015">2015 Data</option>
+                        </select>
+                    </div>
+
+                    <div class="dashboard-tip">
+                        <i class="fa-solid fa-lightbulb"></i>
+                        <span><strong>Analyst Note:</strong> This dashboard renders real processed data parsed from Maven Fuzzy Factory CSV files (100MB+ raw data) aggregated via Python.</span>
+                    </div>
+                </div>
+
+                <!-- Dashboard Content Area -->
+                <div class="dashboard-content">
+                    <!-- Stat Cards -->
+                    <div class="dashboard-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon bg-blue-trans"><i class="fa-solid fa-dollar-sign text-blue"></i></div>
+                            <div class="stat-details">
+                                <span class="stat-title">Total Revenue</span>
+                                <h4 class="stat-value" id="statRevenue">$1.94M</h4>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon bg-green-trans"><i class="fa-solid fa-percent text-green"></i></div>
+                            <div class="stat-details">
+                                <span class="stat-title">Avg Conversion Rate</span>
+                                <h4 class="stat-value" id="statConvRate">6.83%</h4>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon bg-violet-trans"><i class="fa-solid fa-wallet text-violet"></i></div>
+                            <div class="stat-details">
+                                <span class="stat-title">Net Profit</span>
+                                <h4 class="stat-value" id="statProfit">$1.13M</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chart Container -->
+                    <div class="chart-wrapper">
+                        <div class="chart-header">
+                            <h4 id="chartTitle">E-Commerce Performance Analysis</h4>
+                            <span class="chart-badge" id="chartBadge">Maven Fuzzy Factory Data</span>
+                        </div>
+                        <div class="canvas-container">
+                            <canvas id="analyticsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Python Matplotlib & Seaborn Report Panel -->
+            <div class="dashboard-container python-report-container" id="panelPythonReport" style="display: none; padding: 40px; flex-direction: column; gap: 32px;">
+                <div class="python-report-header" style="border-bottom: 1px solid var(--border-color); padding-bottom: 20px;">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700; display: flex; align-items: center; gap: 12px; color: var(--color-primary);">
+                        <i class="fa-brands fa-python"></i> Python Matplotlib & Seaborn Report
+                    </h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 8px;">
+                        Below is the static analytical dashboard generated directly from the Maven Fuzzy Factory dataset (470k+ sessions) using Python.
+                    </p>
+                </div>
+
+                <!-- Dashboard Image -->
+                <div class="python-dashboard-img-wrapper" style="border: 1px solid var(--border-color); border-radius: var(--border-radius-md); overflow: hidden; background: #0d0f14; padding: 10px; box-shadow: var(--shadow-md);">
+                    <img src="maven_seaborn_dashboard.png" alt="Maven Fuzzy Factory Python Seaborn Dashboard" class="python-dashboard-img" style="width: 100%; height: auto; border-radius: var(--border-radius-sm); display: block;">
+                </div>
+
+                <!-- Data Insights -->
+                <div class="python-insights-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+                    <div class="about-card" style="padding: 24px;">
+                        <h4 style="font-family: var(--font-heading); font-weight: 700; color: var(--color-secondary); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+                            <i class="fa-solid fa-chart-line"></i> Traffic & Revenue Trend
+                        </h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">
+                            Website sessions and revenue show strong upward trends over the years, peaking heavily during November/December. Net profits scale proportionally, proving consistent margins.
+                        </p>
+                    </div>
+                    <div class="about-card" style="padding: 24px;">
+                        <h4 style="font-family: var(--font-heading); font-weight: 700; color: var(--color-green); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+                            <i class="fa-solid fa-tags"></i> Product Sales Contribution
+                        </h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">
+                            "The Original Mr. Fuzzy" remains the dominant volume driver. New product launches in 2013 and 2014 successfully diversified the company's dependency.
+                        </p>
+                    </div>
+                    <div class="about-card" style="padding: 24px;">
+                        <h4 style="font-family: var(--font-heading); font-weight: 700; color: var(--color-orange); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+                            <i class="fa-solid fa-rotate-left"></i> Refund Observations
+                        </h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">
+                            A spike in refunds occurred during mid-2014, signaling product issues. Prompt operational adjustments successfully corrected this trend by Q4 2014.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Python Script Code Block Section -->
+                <div class="code-viewer-wrapper" style="border: 1px solid var(--border-color); border-radius: var(--border-radius-md); padding: 24px; background: rgba(10, 12, 16, 0.4);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 16px;">
+                        <div>
+                            <h4 style="font-family: var(--font-heading); font-weight: 700;">Python Analysis Script</h4>
+                            <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Inspect the complete Pandas, Matplotlib & Seaborn code used to generate the dashboard above.</p>
+                        </div>
+                        <button class="btn btn-secondary btn-sm" id="toggleCodeBtn">
+                            <i class="fa-solid fa-code"></i> Show Source Code
+                        </button>
+                    </div>
+                    <div id="pythonCodeBlock" style="display: none; max-height: 400px; overflow-y: auto; background: #050508; border-radius: var(--border-radius-sm); border: 1px solid var(--border-color); padding: 16px;">
+                        <pre style="margin: 0; font-family: monospace; font-size: 0.85rem; color: #f0f6fc; line-height: 1.4;"><code class="language-python">import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import os
+
+# Load E-commerce Data
+orders = pd.read_csv("orders.csv")
+sessions = pd.read_csv("website_sessions.csv")
+products = pd.read_csv("products.csv")
+refunds = pd.read_csv("order_item_refunds.csv")
+
+# Extract Month for Grouping
+orders['created_at'] = pd.to_datetime(orders['created_at'])
+orders['month'] = orders['created_at'].dt.to_period('M')
+
+sessions['created_at'] = pd.to_datetime(sessions['created_at'])
+sessions['month'] = sessions['created_at'].dt.to_period('M')
+
+# Calculate monthly metrics
+monthly_sessions = sessions.groupby('month').size().reset_index(name='sessions')
+monthly_orders = orders.groupby('month').agg(
+    orders=('order_id', 'count'),
+    revenue=('price_usd', 'sum'),
+    cogs=('cogs_usd', 'sum')
+).reset_index()
+
+order_refunds = refunds.merge(orders, on='order_id', how='inner')
+monthly_refunds = order_refunds.groupby('month').agg(
+    refunds_count=('order_item_refund_id', 'count'),
+    refund_amount=('refund_amount_usd', 'sum')
+).reset_index()
+
+df = pd.merge(monthly_sessions, monthly_orders, on='month', how='left').fillna(0)
+df = pd.merge(df, monthly_refunds, on='month', how='left').fillna(0)
+
+# Rates
+df['conv_rate'] = (df['orders'] / df['sessions']) * 100
+df['refund_rate'] = (df['refunds_count'] / df['orders']) * 100
+df['profit'] = df['revenue'] - df['cogs'] - df['refund_amount']
+df['month_str'] = df['month'].astype(str)
+
+# Style & Plot 4 Subplots
+plt.style.use('dark_background')
+fig, axes = plt.subplots(2, 2, figsize=(18, 14), facecolor='#161922')
+
+# Subplot 1: Revenue vs Profit
+ax1 = axes[0, 0]
+ax1.set_facecolor('#0d0f14')
+sns.barplot(data=df, x='month_str', y='revenue', ax=ax1, color='#4facfe', alpha=0.7)
+ax1_line = ax1.twinx()
+sns.lineplot(data=df, x='month_str', y='profit', ax=ax1_line, color='#00ff87', linewidth=3, marker='o')
+
+# Subplot 2: Sessions Traffic & Conversion
+ax2 = axes[0, 1]
+ax2.set_facecolor('#0d0f14')
+sns.barplot(data=df, x='month_str', y='sessions', ax=ax2, color='#00f2fe', alpha=0.6)
+ax2_line = ax2.twinx()
+sns.lineplot(data=df, x='month_str', y='conv_rate', ax=ax2_line, color='#eab308', linewidth=3, marker='s')
+
+# Subplot 3: Product Performance Breakdown
+ax3 = axes[1, 0]
+ax3.set_facecolor('#0d0f14')
+order_items = pd.read_csv("order_items.csv")
+order_items['created_at'] = pd.to_datetime(order_items['created_at'])
+order_items['month'] = order_items['created_at'].dt.to_period('M')
+prod_sales = order_items.merge(products, on='product_id', how='inner')
+prod_monthly = prod_sales.groupby(['month', 'product_name']).size().reset_index(name='orders')
+prod_monthly['month_str'] = prod_monthly['month'].astype(str)
+prod_monthly['Product'] = prod_monthly['product_name'].str.replace('The ', '')
+sns.lineplot(data=prod_monthly, x='month_str', y='orders', hue='Product', ax=ax3, linewidth=2.5, palette='Set2')
+
+# Subplot 4: Refund Rate & Losses
+ax4 = axes[1, 1]
+ax4.set_facecolor('#0d0f14')
+sns.barplot(data=df, x='month_str', y='refund_amount', ax=ax4, color='#ef4444', alpha=0.6)
+ax4_line = ax4.twinx()
+sns.lineplot(data=df, x='month_str', y='refund_rate', ax=ax4_line, color='#8b5cf6', linewidth=2.5, marker='x')
+
+plt.savefig("maven_seaborn_dashboard.png", dpi=120, bbox_inches='tight', facecolor='#161922')
+plt.close()</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Timeline Section -->
+        <section id="experience" class="experience-section scroll-reveal">
+            <div class="section-header">
+                <h2 class="section-title">Work Experience</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="timeline">
+                <!-- Job 1 -->
+                <div class="timeline-item left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="job-period">May 2025 - Present</span>
+                        <h3 class="job-title">EDP Officer / Data Analyst</h3>
+                        <h4 class="job-company"><i class="fa-solid fa-building"></i> Aakash Educational Services Limited (AESL)</h4>
+                        <span class="job-location">Bhilwara Branch</span>
+                        
+                        <p class="job-summary">
+                            Responsible for organizing, extracting, and presenting academic and operational data to support branch-level planning and executive reviews.
+                        </p>
+                        
+                        <ul class="job-tasks">
+                            <li><i class="fa-solid fa-circle-check text-indigo"></i> Prepared comprehensive academic result analysis reports to assess student and batch performance.</li>
+                            <li><i class="fa-solid fa-circle-check text-indigo"></i> Consolidated multi-channel student profiles and maintained records across branch databases.</li>
+                            <li><i class="fa-solid fa-circle-check text-indigo"></i> Automated attendance metrics reporting for faculty and students to streamline monthly checkups.</li>
+                            <li><i class="fa-solid fa-circle-check text-indigo"></i> Crafted structured, readable Excel data summaries for administrative strategic meetings.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="timeline-item right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="job-period">2022 - 2025</span>
+                        <h3 class="job-title">Data Analytics / MIS Manager</h3>
+                        <h4 class="job-company"><i class="fa-solid fa-building"></i> Dainik Bhaskar</h4>
+                        <span class="job-location">Bhilwara Office</span>
+                        
+                        <p class="job-summary">
+                            Served as MIS Executive for 3 years, leading excel-based dashboard updates, record management, and weekly business performance reporting.
+                        </p>
+                        
+                        <ul class="job-tasks">
+                            <li><i class="fa-solid fa-circle-check text-teal"></i> Formulated daily, weekly, and monthly management information system (MIS) report spreadsheets.</li>
+                            <li><i class="fa-solid fa-circle-check text-teal"></i> Utilized pivot tables, charts, and advanced formulas to structure data patterns clearly.</li>
+                            <li><i class="fa-solid fa-circle-check text-teal"></i> Evaluated administrative errors and ensured high standards of record cleaning and verification.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section scroll-reveal">
+            <div class="section-header">
+                <h2 class="section-title">Contact Me</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Info Cards -->
+                <div class="contact-info-panel">
+                    <h3>Let's collaborate on data solutions</h3>
+                    <p>Have a project requiring complex data cleaning, MIS automation, Excel spreadsheets modeling, or custom database analysis? Reach out directly using the options below.</p>
+                    
+                    <div class="contact-details-list">
+                        <div class="contact-info-card">
+                            <div class="info-card-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div class="info-card-text">
+                                <span>Call Me</span>
+                                <a href="tel:+918875216646">+91 88752 16646</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-card">
+                            <div class="info-card-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="info-card-text">
+                                <span>Email Me</span>
+                                <a href="mailto:sainiroshan294@gmail.com">sainiroshan294@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-card">
+                            <div class="info-card-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="info-card-text">
+                                <span>Location</span>
+                                <p>Awari Mata Mandir ke Piche, Krishna Nagar, Bhilwara - 311001, Rajasthan, India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form Mockup -->
+                <div class="contact-form-card">
+                    <h3>Send a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="formName">Full Name</label>
+                                <input type="text" id="formName" class="form-input" placeholder="e.g. John Doe" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="formEmail">Email Address</label>
+                                <input type="email" id="formEmail" class="form-input" placeholder="name@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label for="formSubject">Subject</label>
+                            <input type="text" id="formSubject" class="form-input" placeholder="Excel automation, data extraction, etc." required>
+                        </div>
+                        <div class="form-field">
+                            <label for="formMessage">Message</label>
+                            <textarea id="formMessage" class="form-input" rows="5" placeholder="Describe your data requirements in detail..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <span id="submitBtnText"><i class="fa-solid fa-paper-plane"></i> Send Message</span>
+                        </button>
+                        <div id="formFeedback" class="form-feedback"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 Roshan Mali. All Rights Reserved.</p>
+            <div class="footer-tagline">Designed with precision, powered by data.</div>
+        </div>
+    </footer>
+
+</body>
+</html>
