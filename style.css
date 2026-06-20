@@ -785,6 +785,19 @@ section {
     box-shadow: 0 0 8px rgba(236, 72, 153, 0.4);
 }
 
+.progress-python {
+    background: linear-gradient(90deg, #3776ab, #ffd343);
+    box-shadow: 0 0 8px rgba(55, 118, 171, 0.4);
+}
+.progress-tableau {
+    background: linear-gradient(90deg, #e97627, #f2c811);
+    box-shadow: 0 0 8px rgba(233, 118, 39, 0.4);
+}
+.progress-antigravity {
+    background: linear-gradient(90deg, #a855f7, #ec4899);
+    box-shadow: 0 0 8px rgba(168, 85, 247, 0.4);
+}
+
 .skill-subtext {
     font-size: 0.8rem;
     color: var(--text-secondary);
@@ -1284,6 +1297,35 @@ section {
 .form-input:focus {
     border-color: var(--color-primary);
     box-shadow: 0 0 10px rgba(0, 242, 254, 0.15);
+}
+
+.captcha-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.captcha-row .form-input {
+    flex: 1;
+}
+
+#refreshCaptchaBtn {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--border-radius-sm);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#captchaQuestion {
+    font-weight: 700;
+    color: var(--color-primary);
+    background: rgba(0, 242, 254, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 8px;
 }
 
 textarea.form-input {

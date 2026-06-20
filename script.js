@@ -5,7 +5,7 @@
 
 // CONFIGURATION: If you want to connect your contact form to Google Sheets,
 // paste your deployed Google Apps Script Web App URL below:
-const GOOGLE_SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycby32LL33O8NIuNqI9yM3AjinHGt0dRpk9BQcciTMpe_kn30FxAfdEw7d53eHPxmw9SC/exec";
+const GOOGLE_SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbwLHKFYyLSuzE_Z2FM7iHHqDyKRglmVdQTFAPZ8LJS-8Q5wp7ZN9yrd4Uw7vQ3Ejfw/exec";
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -120,14 +120,45 @@ document.addEventListener('DOMContentLoaded', () => {
     // Start typewriter
     type();
 
-    // 6. Contact Form Submission (Google Sheets Integration / Simulated Fallback)
+    // 6. Contact Form Submission (Google Sheets Integration / Simulated Fallback with CAPTCHA)
     const contactForm = document.getElementById('contactForm');
     const formFeedback = document.getElementById('formFeedback');
     const submitBtnText = document.getElementById('submitBtnText');
+    const captchaQuestion = document.getElementById('captchaQuestion');
+    const captchaInput = document.getElementById('captchaInput');
+    const refreshCaptchaBtn = document.getElementById('refreshCaptchaBtn');
+    let captchaAnswer = 0;
+
+    function generateCaptcha() {
+        if (!captchaQuestion) return;
+        const num1 = Math.floor(Math.random() * 10) + 1; // 1 to 10
+        const num2 = Math.floor(Math.random() * 10) + 1; // 1 to 10
+        captchaAnswer = num1 + num2;
+        captchaQuestion.textContent = ` ${num1} + ${num2} = ?`;
+        if (captchaInput) captchaInput.value = '';
+    }
+
+    // Initialize CAPTCHA
+    generateCaptcha();
+
+    if (refreshCaptchaBtn) {
+        refreshCaptchaBtn.addEventListener('click', generateCaptcha);
+    }
 
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
+
+            // Validate CAPTCHA
+            const userAnswer = parseInt(captchaInput.value, 10);
+            if (userAnswer !== captchaAnswer) {
+                formFeedback.style.display = 'block';
+                formFeedback.textContent = 'Incorrect verification answer. Please solve the math check again.';
+                formFeedback.className = 'form-feedback error';
+                generateCaptcha();
+                if (captchaInput) captchaInput.focus();
+                return;
+            }
 
             // Ensure feedback field is visible when submitting again
             formFeedback.style.display = 'block';
@@ -138,6 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const name = document.getElementById('formName').value;
             const email = document.getElementById('formEmail').value;
+            const phone = document.getElementById('formPhone').value;
             const subject = document.getElementById('formSubject').value;
             const message = document.getElementById('formMessage').value;
 
@@ -146,6 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const formData = new FormData();
                 formData.append('name', name);
                 formData.append('email', email);
+                formData.append('phone', phone);
                 formData.append('subject', subject);
                 formData.append('message', message);
 
@@ -158,6 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         formFeedback.textContent = `Thank you, ${name}! Your message has been sent successfully. Roshan Mali will get back to you shortly.`;
                         formFeedback.className = 'form-feedback success';
                         contactForm.reset();
+                        generateCaptcha();
                     })
                     .catch(error => {
                         console.error('Error submitting form:', error);
@@ -181,6 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     // Reset form inputs and status
                     contactForm.reset();
+                    generateCaptcha();
                     submitBtnText.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
                     contactForm.querySelectorAll('.form-input, .btn').forEach(el => el.disabled = false);
 
