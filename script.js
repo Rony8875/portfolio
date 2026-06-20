@@ -3,6 +3,10 @@
    Handles dynamic animations, UI interactions, and Mock MIS Dashboard logic
    ========================================================================== */
 
+// CONFIGURATION: If you want to connect your contact form to Google Sheets,
+// paste your deployed Google Apps Script Web App URL below:
+const GOOGLE_SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycby32LL33O8NIuNqI9yM3AjinHGt0dRpk9BQcciTMpe_kn30FxAfdEw7d53eHPxmw9SC/exec";
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // 1. Sticky Navigation Scroll Effect
@@ -87,9 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function type() {
         if (!typingElement) return;
-        
+
         const currentRole = roles[roleIndex];
-        
+
         if (isDeleting) {
             typingElement.textContent = currentRole.substring(0, charIndex - 1);
             charIndex--;
@@ -112,11 +116,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setTimeout(type, typingSpeed);
     }
-    
+
     // Start typewriter
     type();
 
-    // 6. Contact Form Submission (Mock API with feedback validation)
+    // 6. Contact Form Submission (Google Sheets Integration / Simulated Fallback)
     const contactForm = document.getElementById('contactForm');
     const formFeedback = document.getElementById('formFeedback');
     const submitBtnText = document.getElementById('submitBtnText');
@@ -124,30 +128,68 @@ document.addEventListener('DOMContentLoaded', () => {
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
+
+            // Ensure feedback field is visible when submitting again
+            formFeedback.style.display = 'block';
+
             // Disable submit button and show spinner
             submitBtnText.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
             contactForm.querySelectorAll('.form-input, .btn').forEach(el => el.disabled = true);
 
-            // Simulate form submission delay
-            setTimeout(() => {
-                const name = document.getElementById('formName').value;
-                
-                // Show success feedback
-                formFeedback.textContent = `Thank you, ${name}! Your mock message has been sent successfully. Roshan Mali will get back to you shortly.`;
-                formFeedback.className = 'form-feedback success';
-                
-                // Reset form inputs and status
-                contactForm.reset();
-                submitBtnText.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
-                contactForm.querySelectorAll('.form-input, .btn').forEach(el => el.disabled = false);
-                
-                // Hide feedback alert after 6 seconds
-                setTimeout(() => {
-                    formFeedback.style.display = 'none';
-                }, 6000);
+            const name = document.getElementById('formName').value;
+            const email = document.getElementById('formEmail').value;
+            const subject = document.getElementById('formSubject').value;
+            const message = document.getElementById('formMessage').value;
 
-            }, 1800);
+            if (GOOGLE_SHEET_WEBAPP_URL && GOOGLE_SHEET_WEBAPP_URL !== 'YOUR_APPS_SCRIPT_WEBAPP_URL_HERE' && GOOGLE_SHEET_WEBAPP_URL.trim() !== '') {
+                // Send real POST request to Google Apps Script
+                const formData = new FormData();
+                formData.append('name', name);
+                formData.append('email', email);
+                formData.append('subject', subject);
+                formData.append('message', message);
+
+                fetch(GOOGLE_SHEET_WEBAPP_URL, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors' // Use 'no-cors' to bypass browser CORS checks on redirect to Google servers
+                })
+                    .then(() => {
+                        formFeedback.textContent = `Thank you, ${name}! Your message has been sent successfully. Roshan Mali will get back to you shortly.`;
+                        formFeedback.className = 'form-feedback success';
+                        contactForm.reset();
+                    })
+                    .catch(error => {
+                        console.error('Error submitting form:', error);
+                        formFeedback.textContent = 'Oops! There was an error sending your message. Please check your connection and try again.';
+                        formFeedback.className = 'form-feedback error';
+                    })
+                    .finally(() => {
+                        submitBtnText.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
+                        contactForm.querySelectorAll('.form-input, .btn').forEach(el => el.disabled = false);
+
+                        // Hide feedback alert after 8 seconds
+                        setTimeout(() => {
+                            formFeedback.style.display = 'none';
+                        }, 8000);
+                    });
+            } else {
+                // Simulate form submission delay (Simulated/mock database logging)
+                setTimeout(() => {
+                    formFeedback.textContent = `Thank you, ${name}! Your mock message has been sent successfully. (Note: Google Sheet URL is not configured).`;
+                    formFeedback.className = 'form-feedback success';
+
+                    // Reset form inputs and status
+                    contactForm.reset();
+                    submitBtnText.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
+                    contactForm.querySelectorAll('.form-input, .btn').forEach(el => el.disabled = false);
+
+                    // Hide feedback alert after 8 seconds
+                    setTimeout(() => {
+                        formFeedback.style.display = 'none';
+                    }, 8000);
+                }, 1800);
+            }
         });
     }
 
@@ -157,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const filter2Select = document.getElementById('filter2Select');
     const filter1Label = document.querySelector('label[for="filter1Select"]');
     const filter2Label = document.querySelector('label[for="filter2Select"]');
-    
+
     // KPI Stat elements (Renamed IDs to match new HTML)
     const statRevenue = document.getElementById('statRevenue');
     const statConvRate = document.getElementById('statConvRate');
@@ -240,7 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
             totalProfit += t.profit;
             totalRefundAmount += t.refund_amount;
             totalOrders += t.orders;
-            
+
             if (dashboard.device === 'desktop') {
                 totalSessions += t.desktop_sessions;
             } else if (dashboard.device === 'mobile') {
@@ -298,7 +340,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (dashboard.reportType === 'revenue') {
             chartTitle.textContent = 'Monthly Revenue & Net Profit Growth';
-            
+
             // Set KPI Cards
             stat1Title.textContent = 'Total Gross Revenue';
             statRevenue.textContent = formatCurrency(totalRevenue);
@@ -335,7 +377,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             chartOptions.plugins.legend = { display: true, position: 'top' };
             chartOptions.scales.y.ticks = {
-                callback: function(value) { return '$' + (value / 1000) + 'K'; }
+                callback: function (value) { return '$' + (value / 1000) + 'K'; }
             };
 
         } else if (dashboard.reportType === 'conversion') {
@@ -385,14 +427,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 display: true,
                 position: 'left',
                 grid: { color: 'rgba(255, 255, 255, 0.02)' },
-                ticks: { callback: function(value) { return value.toLocaleString(); } }
+                ticks: { callback: function (value) { return value.toLocaleString(); } }
             };
             chartOptions.scales.y1 = {
                 type: 'linear',
                 display: true,
                 position: 'right',
                 grid: { drawOnChartArea: false }, // Only show grid lines for left axis
-                ticks: { callback: function(value) { return value + '%'; } }
+                ticks: { callback: function (value) { return value + '%'; } }
             };
 
         } else if (dashboard.reportType === 'products') {
@@ -499,7 +541,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             chartOptions.plugins.legend = { display: true, position: 'top' };
             chartOptions.scales.y.ticks = {
-                callback: function(value) { return '$' + value; }
+                callback: function (value) { return '$' + value; }
             };
         }
 
@@ -519,7 +561,7 @@ document.addEventListener('DOMContentLoaded', () => {
         datasetSelect.addEventListener('change', renderDashboard);
         filter1Select.addEventListener('change', renderDashboard);
         filter2Select.addEventListener('change', renderDashboard);
-        
+
         // Initialize Chart on load after window.MAVEN_DATA is loaded
         setTimeout(() => {
             if (window.MAVEN_DATA) {

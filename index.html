@@ -640,20 +640,20 @@ plt.close()</code></pre>
                         <div class="form-row">
                             <div class="form-field">
                                 <label for="formName">Full Name</label>
-                                <input type="text" id="formName" class="form-input" placeholder="e.g. John Doe" required>
+                                <input type="text" id="formName" name="name" class="form-input" placeholder="e.g. John Doe" required>
                             </div>
                             <div class="form-field">
                                 <label for="formEmail">Email Address</label>
-                                <input type="email" id="formEmail" class="form-input" placeholder="name@example.com" required>
+                                <input type="email" id="formEmail" name="email" class="form-input" placeholder="name@example.com" required>
                             </div>
                         </div>
                         <div class="form-field">
                             <label for="formSubject">Subject</label>
-                            <input type="text" id="formSubject" class="form-input" placeholder="Excel automation, data extraction, etc." required>
+                            <input type="text" id="formSubject" name="subject" class="form-input" placeholder="Excel automation, data extraction, etc." required>
                         </div>
                         <div class="form-field">
                             <label for="formMessage">Message</label>
-                            <textarea id="formMessage" class="form-input" rows="5" placeholder="Describe your data requirements in detail..." required></textarea>
+                            <textarea id="formMessage" name="message" class="form-input" rows="5" placeholder="Describe your data requirements in detail..." required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">
                             <span id="submitBtnText"><i class="fa-solid fa-paper-plane"></i> Send Message</span>
